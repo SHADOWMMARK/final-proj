@@ -38,7 +38,6 @@ def mapAirports(IATA):
     response = render_template("map.html", map = world_map.get_root())
     # response = render_template("map.html")
     response = "<h2>The loction of "+IATA+" , (Entire Name:) "+ name +" is shown below:</h2>" + response
-    # os.remove("templates/map.html")
     return response
 
 
@@ -117,8 +116,6 @@ def findRoute():
                 line = [loc[:2],nextNLoc[:2]]
                 folium.PolyLine(locations=line, color='red', weight=1.5, opacity=0.7).add_to(world_map)
         world_map.save("templates/route.html")
-        # response = "<h2>The route from " + source + " to " + des +" shown in below map</h2>" +\
-        #     render_template("route.html", map = world_map.get_root())
         response = render_template("routePath.html")
         for node in route:
             response += "<p>" + node + "</p>"
