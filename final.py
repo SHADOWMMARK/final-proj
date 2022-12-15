@@ -1,21 +1,12 @@
 from flask import Flask, render_template, redirect, request
-import json
 import folium
 from datetime import timedelta
-
+from load import loadData
 
 app = Flask(__name__)
 app.debug = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=1)
 
-def loadData():
-    # load the data from json files
-    with open("airports.json", "r") as f:
-        # load the contents of the file as a dictionary
-        airports = json.load(f)
-    with open("routes.json", "r") as f:
-        routes = json.load(f)       
-    return routes,airports
 
 # load two dictionary from json file
 routes,airports = loadData()
