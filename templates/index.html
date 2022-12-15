@@ -1,0 +1,37 @@
+<html>
+<body>
+
+
+<h1>Welcome!</h1>
+
+<h2>here are some option you could have:</h2>
+<h3>1. Search airport on the map</h3>
+<form action="/airportPos" method="post">
+    <p>example input: EWR</p>
+    <input name="airport" value="EWR" />
+    </br>
+    <button type="submit">Click here</button>
+</form>
+
+<h3>2. Find the nearby airports within 1 flight</h3>
+<form action="/nearAirportPos" method="post">
+    <p>example input: EWR</p>
+    <input name="airport" value="EWR" />
+    </br>
+    <button type="submit">Click here</button>
+</form>
+
+<h3>3. Find the route from airport A to B</h3>
+<form action="/route" method="post">
+    <p>example input: EWR</p>
+    <input name="source" value="EWR" />
+    </br>
+    <p>example input: EWR</p>
+    <input name="destination" value="EWR" />
+    <button type="submit">Click here</button>
+</form>
+
+</script>
+
+</body>
+</html>
